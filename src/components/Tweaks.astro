@@ -1,0 +1,63 @@
+---
+---
+<div id="tweaks">
+  <div class="tw-head">
+    <span class="tw-title">Tweaks</span>
+    <button class="tw-x" aria-label="Cerrar">×</button>
+  </div>
+  <div class="tw-label">Tipografía de títulos</div>
+  <div class="tw-fonts"></div>
+  <p class="tw-hint">Elige la que coincide con tu referencia.</p>
+</div>
+
+<style>
+  #tweaks { position: fixed; bottom: 24px; right: 24px; z-index: 999; width: 272px; background: var(--white); color: var(--ink); border-radius: 22px; padding: 18px; box-shadow: 0 24px 60px rgba(30,12,20,.26), 0 0 0 1px var(--line); opacity: 0; transform: translateY(14px) scale(.98); pointer-events: none; transition: opacity .25s, transform .25s; }
+  #tweaks.open { opacity: 1; transform: none; pointer-events: auto; }
+  .tw-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+  .tw-title { font-family: var(--font-display); font-weight: 800; font-size: 16px; }
+  .tw-x { background: none; border: none; font-size: 22px; color: var(--ink-faint); cursor: pointer; }
+  .tw-x:hover { color: var(--ink); }
+  .tw-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 11px; }
+  .tw-fonts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .tw-font { border: 1px solid var(--line); background: #fff; color: var(--ink); border-radius: 12px; padding: 11px 8px; font-size: 16px; cursor: pointer; transition: all .18s; }
+  .tw-font:hover { border-color: var(--pink); }
+  .tw-font.on { background: var(--pink); color: #fff; border-color: var(--pink); }
+  .tw-hint { font-size: 11.5px; color: var(--ink-faint); margin-top: 12px; line-height: 1.4; }
+</style>
+
+<script>
+  const FONTS = [
+    { key:'Hanken Grotesk',     label:'Hanken',   css:"'Hanken Grotesk', sans-serif",     w:800 },
+    { key:'Figtree',            label:'Figtree',  css:"'Figtree', sans-serif",            w:800 },
+    { key:'Plus Jakarta Sans',  label:'Jakarta',  css:"'Plus Jakarta Sans', sans-serif",  w:800 },
+    { key:'Onest',              label:'Onest',    css:"'Onest', sans-serif",              w:800 },
+    { key:'Nunito',             label:'Nunito',   css:"'Nunito', sans-serif",             w:900 },
+  ];
+  const SK = 'gisus_font';
+  const applyFont = (css: string) => document.documentElement.style.setProperty('--font-display', css);
+  const saved = localStorage.getItem(SK);
+  if (saved) { const f = FONTS.find(f => f.key === saved); if (f) applyFont(f.css); }
+  const panel = document.getElementById('tweaks')!;
+  const list = panel.querySelector('.tw-fonts')!;
+  const cur = saved || 'Hanken Grotesk';
+  FONTS.forEach(f => {
+    const b = document.createElement('button');
+    b.className = 'tw-font' + (f.key === cur ? ' on' : '');
+    (b.style as any).fontFamily = f.css; (b.style as any).fontWeight = String(f.w); b.textContent = f.label;
+    b.onclick = () => {
+      applyFont(f.css);
+      localStorage.setItem(SK, f.key);
+      list.querySelectorAll('.tw-font').forEach(x => x.classList.remove('on'));
+      b.classList.add('on');
+    };
+    list.appendChild(b);
+  });
+  const setOpen = (v: boolean) => panel.classList.toggle('open', v);
+  panel.querySelector('.tw-x')!.addEventListener('click', () => { setOpen(false); window.parent.postMessage({ type:'__edit_mode_dismissed' }, '*'); });
+  window.addEventListener('message', (e: MessageEvent) => {
+    const t = e.data && e.data.type;
+    if (t === '__activate_edit_mode') setOpen(true);
+    if (t === '__deactivate_edit_mode') setOpen(false);
+  });
+  window.parent.postMessage({ type:'__edit_mode_available', keys:['Tipografía'] }, '*');
+</script>

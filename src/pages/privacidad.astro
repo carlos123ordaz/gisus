@@ -1,0 +1,371 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="Privacidad — Gisus">
+  <Nav />
+
+  <PageHero
+    eyebrow="Legal"
+    title="Política de privacidad"
+    subtitle="Última actualización: 14 de junio de 2026"
+  />
+
+  <div class="legal-wrap">
+    <aside class="toc">
+      <p class="toc-label">En esta página</p>
+      <nav>
+        <a href="#datos">Datos que recogemos</a>
+        <a href="#uso">Cómo los usamos</a>
+        <a href="#proximidad">Tecnología de proximidad</a>
+        <a href="#compartir">Compartir información</a>
+        <a href="#retencion">Retención y borrado</a>
+        <a href="#menores">Menores de edad</a>
+        <a href="#derechos">Tus derechos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </aside>
+
+    <article class="prose">
+      <div class="prose-intro">
+        <p>En Gisus nos tomamos tu privacidad muy en serio. Esta política explica qué información procesamos, por qué y cómo puedes controlarla. Si tienes dudas, escríbenos a <a href="mailto:privacidad@gisus.app">privacidad@gisus.app</a>.</p>
+      </div>
+
+      <section id="datos">
+        <h2>1. Datos que recogemos</h2>
+        <h3>Datos que tú nos proporcionas</h3>
+        <ul>
+          <li><strong>Nombre de usuario y foto de perfil</strong> — opcionales. Puedes usar Gisus con un seudónimo y sin foto.</li>
+          <li><strong>Dirección de correo electrónico</strong> — para crear y recuperar tu cuenta.</li>
+          <li><strong>Preferencias de la app</strong> — ajustes de visibilidad, notificaciones y filtros que configuras tú.</li>
+        </ul>
+        <h3>Datos que se generan automáticamente</h3>
+        <ul>
+          <li><strong>Identificador de proximidad efímero</strong> — una cadena aleatoria que cambia cada pocos minutos. No contiene coordenadas GPS ni datos personales. Es el único dato que se transmite a otros usuarios con Gisus activo.</li>
+          <li><strong>Metadatos de uso</strong> — versión de la app, tipo de dispositivo, hora de apertura de sesión. Nunca incluyen contenido de conversaciones.</li>
+          <li><strong>Logs de errores</strong> — trazas anónimas para detectar fallos técnicos.</li>
+        </ul>
+        <div class="callout">
+          <span class="callout-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FF2D78" stroke-width="1.8" stroke-linejoin="round"/></svg>
+          </span>
+          <p><strong>No usamos GPS.</strong> Gisus detecta proximidad sin acceder a tu ubicación exacta. Nunca almacenamos coordenadas geográficas.</p>
+        </div>
+      </section>
+
+      <section id="uso">
+        <h2>2. Cómo usamos tus datos</h2>
+        <table>
+          <thead><tr><th>Finalidad</th><th>Base legal</th></tr></thead>
+          <tbody>
+            <tr><td>Prestación del servicio de proximidad</td><td>Ejecución del contrato</td></tr>
+            <tr><td>Envío de notificaciones push</td><td>Consentimiento</td></tr>
+            <tr><td>Detección de fraude y abusos</td><td>Interés legítimo</td></tr>
+            <tr><td>Mejora del producto mediante métricas agregadas</td><td>Interés legítimo</td></tr>
+            <tr><td>Cumplimiento de obligaciones legales</td><td>Obligación legal</td></tr>
+          </tbody>
+        </table>
+        <p>Nunca vendemos tus datos a terceros. No usamos tus datos para publicidad de terceros.</p>
+      </section>
+
+      <section id="proximidad">
+        <h2>3. Tecnología de proximidad</h2>
+        <p>Gisus utiliza señales de corto alcance (Bluetooth Low Energy y/o Wi-Fi direct) para detectar otros dispositivos con la app activa en las inmediaciones. Este mecanismo:</p>
+        <ul>
+          <li>No requiere acceso a tu ubicación GPS.</li>
+          <li>Transmite únicamente un identificador efímero que rota cada 3–7 minutos.</li>
+          <li>No permite triangular tu posición exacta.</li>
+          <li>Se detiene completamente cuando cierras la app o desactivas tu visibilidad.</li>
+        </ul>
+        <p>Los identificadores efímeros nunca se vinculan a tu perfil real en los servidores de Gisus. El servidor recibe la señal de "está cerca" pero no sabe quién es "tú" de manera persistente.</p>
+      </section>
+
+      <section id="compartir">
+        <h2>4. Compartir información</h2>
+        <p>Compartimos datos mínimos con los siguientes proveedores de confianza, bajo contrato de procesamiento de datos (DPA):</p>
+        <ul>
+          <li><strong>Infraestructura cloud</strong> — alojamiento seguro en la Unión Europea.</li>
+          <li><strong>Servicio de notificaciones push</strong> — solo recibe un token de dispositivo anonimizado.</li>
+          <li><strong>Análisis de rendimiento</strong> — métricas agregadas, sin datos identificables.</li>
+        </ul>
+        <p>Podemos divulgar datos si existe una obligación legal (orden judicial, requerimiento de autoridad) o para proteger la seguridad de usuarios en situaciones graves.</p>
+      </section>
+
+      <section id="retencion">
+        <h2>5. Retención y borrado</h2>
+        <ul>
+          <li><strong>Identificadores efímeros</strong>: se descartan en tiempo real; no se almacenan en disco.</li>
+          <li><strong>Mensajes de chat</strong>: se eliminan de nuestros servidores 24 horas después de que ambos usuarios hayan abandonado la misma zona de proximidad.</li>
+          <li><strong>Cuenta de usuario</strong>: se conserva mientras la cuenta esté activa. Puedes eliminarla desde Ajustes → Cuenta → Eliminar cuenta. Procesamos la baja en 30 días.</li>
+          <li><strong>Logs de errores</strong>: máximo 90 días.</li>
+        </ul>
+      </section>
+
+      <section id="menores">
+        <h2>6. Menores de edad</h2>
+        <p>Gisus está dirigido a mayores de 18 años. No recogemos conscientemente datos de personas menores de 18 años. Si detectamos una cuenta creada por un menor, la eliminamos inmediatamente. Si eres padre/madre/tutor y crees que tu hijo/a tiene una cuenta, escríbenos a <a href="mailto:privacidad@gisus.app">privacidad@gisus.app</a>.</p>
+      </section>
+
+      <section id="derechos">
+        <h2>7. Tus derechos</h2>
+        <p>Según el RGPD y legislación aplicable, puedes ejercer en cualquier momento:</p>
+        <div class="rights-grid">
+          <div class="right-card">
+            <div class="right-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="4" stroke="#FF2D78" stroke-width="1.6"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Acceso</h4>
+            <p>Solicitar una copia de tus datos personales.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/><path d="M18.5 2.5a2.12 2.12 0 013 3L12 15l-4 1 1-4 9.5-9.5z" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Rectificación</h4>
+            <p>Corregir datos inexactos o incompletos.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><polyline points="3 6 5 6 21 6" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/><path d="M19 6l-1 14H6L5 6" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 11v6M14 11v6" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Supresión</h4>
+            <p>Eliminar tu cuenta y todos tus datos.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#FF2D78" stroke-width="1.6"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Portabilidad</h4>
+            <p>Exportar tus datos en formato legible.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#FF2D78" stroke-width="1.6"/><path d="M15 9l-6 6M9 9l6 6" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h4>Oposición</h4>
+            <p>Oponerte al tratamiento basado en interés legítimo.</p>
+          </div>
+          <div class="right-card">
+            <div class="right-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M18.36 6.64A9 9 0 115.64 17.36" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/><polyline points="23 2 23 8 17 8" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h4>Limitación</h4>
+            <p>Restringir el procesamiento en ciertos casos.</p>
+          </div>
+        </div>
+        <p>Para ejercer cualquiera de estos derechos, escribe a <a href="mailto:privacidad@gisus.app">privacidad@gisus.app</a>. Respondemos en un máximo de 30 días. También puedes reclamar ante la autoridad de protección de datos de tu país.</p>
+      </section>
+
+      <section id="contacto">
+        <h2>8. Contacto y DPO</h2>
+        <p>Responsable del tratamiento: <strong>Gisus Technologies S.L.</strong></p>
+        <p>Delegado de Protección de Datos: <a href="mailto:dpo@gisus.app">dpo@gisus.app</a></p>
+        <p>Para consultas generales de privacidad: <a href="mailto:privacidad@gisus.app">privacidad@gisus.app</a></p>
+      </section>
+    </article>
+  </div>
+
+  <Footer />
+</Layout>
+
+<style>
+  .legal-wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 32px 120px;
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+
+  /* TOC */
+  .toc {
+    position: sticky;
+    top: 100px;
+  }
+  .toc-label {
+    font-family: var(--font-display);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 16px;
+  }
+  .toc nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .toc a {
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 7px 12px;
+    border-radius: 10px;
+    transition: background .18s, color .18s;
+    border-left: 2px solid transparent;
+  }
+  .toc a:hover {
+    background: var(--pink-softer);
+    color: var(--pink);
+    border-left-color: var(--pink);
+  }
+
+  /* Prose */
+  .prose-intro {
+    font-size: 18px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    padding: 28px 32px;
+    background: var(--pink-softer);
+    border-radius: 20px;
+    border-left: 3px solid var(--pink);
+    margin-bottom: 56px;
+  }
+  .prose-intro a { color: var(--pink); }
+
+  .prose section {
+    margin-bottom: 56px;
+    padding-bottom: 56px;
+    border-bottom: 1px solid var(--line);
+  }
+  .prose section:last-child { border-bottom: none; }
+
+  .prose h2 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+    color: var(--ink);
+  }
+  .prose h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 18px;
+    margin: 24px 0 10px;
+    color: var(--ink);
+  }
+  .prose p {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+  .prose a { color: var(--pink); text-decoration: underline; text-underline-offset: 3px; }
+  .prose ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .prose li {
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    padding-left: 22px;
+    position: relative;
+  }
+  .prose li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--pink);
+  }
+  .prose strong { color: var(--ink); font-weight: 600; }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  th {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--ink-faint);
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 2px solid var(--line);
+  }
+  td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink-soft);
+    line-height: 1.5;
+  }
+  tr:last-child td { border-bottom: none; }
+
+  /* Callout */
+  .callout {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    background: var(--pink-softer);
+    border: 1px solid var(--pink-soft);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin: 24px 0;
+  }
+  .callout-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .callout p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink);
+  }
+
+  /* Rights grid */
+  .rights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+  .right-card {
+    background: var(--cream);
+    border-radius: 18px;
+    padding: 22px;
+  }
+  .right-icon { margin-bottom: 12px; }
+  .right-card h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 6px;
+    color: var(--ink);
+  }
+  .right-card p {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 980px) {
+    .legal-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .toc { position: static; }
+    .rights-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 560px) {
+    .legal-wrap { padding: 48px 20px 80px; }
+    .rights-grid { grid-template-columns: 1fr; }
+  }
+</style>

@@ -1,0 +1,65 @@
+---
+export interface Props {
+  title?: string;
+}
+const { title = 'Gisus — La persona que buscabas ya está aquí' } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&family=Figtree:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;700;800&family=Onest:wght@400;500;700;800&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script src="/image-slot.js" is:inline></script>
+</head>
+<body>
+  <slot />
+</body>
+</html>
+
+<style is:global>
+  /* ─── TOKENS ─────────────────────────────────────────────────── */
+  :root {
+    --font-display: 'Hanken Grotesk', sans-serif;
+    --font-body:    'Hanken Grotesk', sans-serif;
+
+    --pink:       #FF2D78;
+    --pink-light: #FF6B9D;
+    --pink-soft:  #FFE3EC;
+    --pink-softer:#FFF1F5;
+    --grad:       linear-gradient(120deg, #FF2D78 0%, #FF6B9D 100%);
+
+    --ink:        #1E1418;
+    --ink-soft:   rgba(30,20,24,0.66);
+    --ink-faint:  rgba(30,20,24,0.42);
+    --line:       rgba(30,20,24,0.10);
+    --white:      #FFFFFF;
+    --cream:      #FBF7F4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body); background: var(--white); color: var(--ink);
+    overflow-x: hidden; -webkit-font-smoothing: antialiased; line-height: 1.5;
+  }
+  .display { font-family: var(--font-display); font-weight: 800; line-height: 0.98; letter-spacing: -0.025em; }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+
+  /* ─── FADE ────────────────────────────────────────────────────── */
+  .fade { opacity: 0; transform: translateY(30px); transition: opacity .7s ease, transform .7s ease; }
+  .fade.in { opacity: 1; transform: none; }
+
+  /* ─── ANIMATIONS ─────────────────────────────────────────────── */
+  @keyframes blink { 0%,100%{opacity:1;} 50%{opacity:.3;} }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes ripple { 0%{width:60px;height:60px;opacity:.7;} 100%{width:500px;height:500px;opacity:0;} }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────────────── */
+  @media (max-width: 560px) {
+    .wrap { padding: 0 20px; }
+  }
+</style>

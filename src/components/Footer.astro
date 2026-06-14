@@ -1,0 +1,80 @@
+---
+---
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#" class="logo">Gisus</a>
+        <p class="foot-tagline">Conexiones espontáneas con personas que comparten tu espacio físico, en tiempo real.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Producto</h4>
+        <ul>
+          <li><a href="#como">Cómo funciona</a></li>
+          <li><a href="#porque">Por qué Gisus</a></li>
+          <li><a href="#app">La app</a></li>
+          <li><a href="#descargar">Descargar</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Compañía</h4>
+        <ul>
+          <li><a href="#">Sobre nosotros</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Trabaja con nosotros</a></li>
+          <li><a href="#">Prensa</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Privacidad</a></li>
+          <li><a href="#">Términos</a></li>
+          <li><a href="#">Seguridad</a></li>
+          <li><a href="#">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-word">Gisus</div>
+    <div class="foot-bottom">
+      <p class="foot-copy">© 2026 Gisus. Hecho para el aquí y ahora.</p>
+      <div class="foot-socials">
+        <a href="#" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg>
+        </a>
+        <a href="#" aria-label="TikTok">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M14 3v11.5a3.5 3.5 0 11-3-3.46V8a6.5 6.5 0 106 6.5V8.5a5.5 5.5 0 003.5 1.3V6.4A3.4 3.4 0 0114 3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="#" aria-label="X">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M3 3l7.5 9.5L3.5 21H6l5.3-6.3L16 21h5l-8-10.2L20.3 3H18l-5 5.9L8.5 3H3z" fill="currentColor"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer { padding: 90px 0 50px; border-top: 1px solid var(--line); }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 36px; margin-bottom: 48px; }
+  .logo { font-family: var(--font-display); font-weight: 800; font-size: 27px; color: var(--ink); text-decoration: none; letter-spacing: -0.02em; }
+  .foot-tagline { font-size: 16px; color: var(--ink-soft); line-height: 1.55; max-width: 300px; margin-top: 14px; }
+  .foot-col h4 { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 18px; }
+  .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .foot-col a { color: var(--ink); text-decoration: none; font-size: 16px; font-weight: 500; transition: color .2s; }
+  .foot-col a:hover { color: var(--pink); }
+  .foot-word { font-family: var(--font-display); font-weight: 900; font-size: clamp(70px, 16vw, 230px); color: var(--ink); letter-spacing: -0.04em; line-height: .9; margin: 20px 0 30px; }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding-top: 28px; border-top: 1px solid var(--line); }
+  .foot-copy { font-size: 14px; color: var(--ink-faint); }
+  .foot-socials { display: flex; gap: 10px; }
+  .foot-socials a { width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--line); display: flex; align-items: center; justify-content: center; color: var(--ink); transition: all .2s; }
+  .foot-socials a:hover { background: var(--pink); border-color: var(--pink); color: #fff; }
+
+  @media (max-width: 980px) {
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+    .foot-brand { grid-column: 1 / -1; }
+  }
+  @media (max-width: 560px) {
+    .foot-grid { grid-template-columns: 1fr; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+  }
+</style>

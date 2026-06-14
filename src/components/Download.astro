@@ -1,0 +1,94 @@
+---
+---
+<section class="download-sec" id="descargar">
+  <div class="wrap">
+    <div class="download" id="app">
+      <div class="dl-rings"><div class="dl-ring"></div><div class="dl-ring"></div><div class="dl-ring"></div></div>
+      <div>
+        <h2 class="dl-title">Descarga Gisus. Enciende el radar.</h2>
+        <p class="dl-sub">Alguien interesante está a metros de donde estás. Empieza ahora.</p>
+        <div class="store-row">
+          <a href="#" class="btn-store">
+            <svg width="22" height="24" viewBox="0 0 24 26" fill="currentColor"><path d="M20.9 18.2c-.8 1.7-1.7 3.2-3 4.1-1.1.8-2.1 1-3 1-1.2 0-1.9-.4-3.1-.4-1.2 0-2 .5-3.2.5-1.1 0-2.2-1.2-3.4-2.9C3.1 18.4 1.5 14 1.5 10c0-5.2 3.3-8 6.6-8 1.5 0 2.8.9 3.7.9s2.4-1 4.2-1c1.7 0 4.8 1 6.2 4.5-4.6 2.5-4.5 8.2-.1 9.4.3.1.5.3.8.4zM15 2c.5-1.1 1.4-2.1 2.4-2.6-1.8.1-3.6 1.3-4.7 2.7.8 1 1.2 2 1.1 3.1.9-.2 1.9-1.2 1.9-2.8z"/></svg>
+            <div><span class="store-label">Disponible en</span><span class="store-name">App Store</span></div>
+          </a>
+          <a href="#" class="btn-store">
+            <svg width="20" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.5 22.5V1.5l17 10.5-17 10.5z" fill="#FF6B9D"/></svg>
+            <div><span class="store-label">Disponible en</span><span class="store-name">Google Play</span></div>
+          </a>
+        </div>
+      </div>
+      <div class="dl-phone-wrap">
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <div class="app-head"><span class="app-title-text">Radar</span><span class="app-live">EN VIVO</span></div>
+            <div class="mini-radar">
+              <div class="mini-disk">
+                <div class="mini-ring m1"></div><div class="mini-ring m2"></div>
+                <div class="mini-glow"></div><div class="mini-sweep"></div><div class="mini-you"></div>
+                <div class="mdot" style="top:28%;left:64%;width:28px;height:28px;background:linear-gradient(135deg,#FF2D78,#FF6B9D)">A</div>
+                <div class="mdot" style="top:66%;left:30%;width:24px;height:24px;background:linear-gradient(135deg,#6B4FFF,#9B7FFF)">L</div>
+                <div class="mdot" style="top:72%;left:70%;width:21px;height:21px;background:linear-gradient(135deg,#FF8C42,#FFC542)">S</div>
+              </div>
+            </div>
+            <div class="app-list">
+              <div class="app-item"><div class="app-av" style="background:linear-gradient(135deg,#FF2D78,#FF6B9D)">A</div><div><div class="app-name">@ana.garcia</div><div class="app-dist">8 metros</div></div><div class="app-heart">♡</div></div>
+              <div class="app-item"><div class="app-av" style="background:linear-gradient(135deg,#6B4FFF,#9B7FFF)">L</div><div><div class="app-name">@lucas.m</div><div class="app-dist">14 metros</div></div><div class="app-heart">♡</div></div>
+              <div class="app-item"><div class="app-av" style="background:linear-gradient(135deg,#FF8C42,#FFC542)">S</div><div><div class="app-name">@sara.r</div><div class="app-dist">22 metros</div></div><div class="app-heart">♡</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .download-sec { padding: 0 0 120px; }
+  .download { background: var(--grad); border-radius: 44px; padding: 80px; color: #fff; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; overflow: hidden; }
+  .dl-rings { position: absolute; right: -100px; top: 50%; transform: translateY(-50%); width: 500px; height: 500px; pointer-events: none; opacity: .5; }
+  .dl-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,.3); top: 50%; left: 50%; transform: translate(-50%,-50%) scale(0); animation: ripple 5s ease-out infinite; }
+  .dl-ring:nth-child(1){ animation-delay: 0s; } .dl-ring:nth-child(2){ animation-delay: 1.6s; } .dl-ring:nth-child(3){ animation-delay: 3.2s; }
+  .dl-title { font-family: var(--font-display); font-weight: 800; font-size: clamp(40px, 4.6vw, 64px); margin-bottom: 18px; letter-spacing: -0.02em; position: relative; }
+  .dl-sub { font-size: 19px; opacity: .92; margin-bottom: 34px; max-width: 380px; position: relative; }
+  .store-row { display: flex; gap: 14px; flex-wrap: wrap; position: relative; }
+  .btn-store { display: flex; align-items: center; gap: 12px; background: var(--ink); color: #fff; text-decoration: none; padding: 14px 24px; border-radius: 16px; transition: transform .22s; }
+  .btn-store:hover { transform: translateY(-3px); }
+  .store-label { font-size: 11px; opacity: .7; display: block; line-height: 1; margin-bottom: 3px; }
+  .store-name { font-family: var(--font-display); font-size: 16px; font-weight: 700; line-height: 1; display: block; }
+  .dl-phone-wrap { display: flex; justify-content: center; align-items: flex-end; position: relative; }
+
+  .phone { width: 270px; border-radius: 44px; background: #16161E; border: 8px solid #25253A; box-shadow: 0 40px 90px rgba(0,0,0,.4); overflow: hidden; position: relative; flex-shrink: 0; }
+  .phone-notch { position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 104px; height: 24px; background: #16161E; border-radius: 0 0 16px 16px; z-index: 30; }
+  .phone-screen { width: 100%; background: #09090F; }
+  .app-head { display: flex; align-items: center; justify-content: space-between; padding: 30px 16px 12px; }
+  .app-title-text { font-family: var(--font-display); font-size: 20px; font-weight: 800; color: #fff; }
+  .app-live { font-size: 10px; font-weight: 700; color: #FF6B9D; display: flex; align-items: center; gap: 5px; }
+  .app-live::before { content:''; width:6px; height:6px; border-radius:50%; background:#FF6B9D; animation: blink 1.5s infinite; }
+
+  .mini-radar { position: relative; width: 190px; height: 190px; margin: 4px auto 16px; }
+  .mini-disk { width:100%; height:100%; border-radius:50%; background: rgba(255,45,120,.05); border:1px solid rgba(255,45,120,.16); overflow:hidden; position:relative; }
+  .mini-ring { position:absolute; border-radius:50%; border:1px solid rgba(255,45,120,.2); top:50%; left:50%; transform:translate(-50%,-50%); }
+  .mini-ring.m1 { width:38%; height:38%; } .mini-ring.m2 { width:70%; height:70%; }
+  .mini-glow { position:absolute; inset:0; border-radius:50%; background: conic-gradient(from 0deg, transparent 62%, rgba(255,45,120,.12) 100%); animation: spin 4s linear infinite; }
+  .mini-sweep { position:absolute; top:50%; left:50%; width:50%; height:1.5px; transform-origin:left center; background:linear-gradient(to right,transparent,rgba(255,45,120,.9)); animation: spin 4s linear infinite; }
+  .mini-you { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:12px; height:12px; border-radius:50%; background:var(--grad); box-shadow:0 0 14px rgba(255,45,120,.8); z-index:6; }
+  .mdot { position:absolute; transform:translate(-50%,-50%); border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:10px; font-weight:800; color:#fff; border:2px solid rgba(255,45,120,.45); z-index:5; }
+  .app-list { padding: 0 12px 18px; }
+  .app-item { display:flex; align-items:center; gap:10px; padding:9px 11px; background: rgba(255,255,255,.045); border-radius:13px; margin-bottom:7px; }
+  .app-av { width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-family:var(--font-display); font-size:12px; font-weight:800; color:#fff; flex-shrink:0; }
+  .app-name { font-size:12.5px; font-weight:700; color:rgba(255,255,255,.92); }
+  .app-dist { font-size:10px; color:rgba(255,255,255,.4); }
+  .app-heart { margin-left:auto; width:28px; height:28px; border-radius:50%; background:rgba(255,45,120,.14); border:1px solid rgba(255,45,120,.3); display:flex; align-items:center; justify-content:center; font-size:12px; color:#FF6B9D; }
+
+  @media (max-width: 980px) {
+    .download { grid-template-columns: 1fr; padding: 48px 32px; text-align: center; }
+    .dl-sub { margin-left: auto; margin-right: auto; }
+    .store-row { justify-content: center; }
+    .dl-phone-wrap { margin-top: 30px; }
+  }
+  @media (max-width: 560px) {
+    .download { padding: 40px 24px; border-radius: 32px; }
+  }
+</style>

@@ -1,0 +1,64 @@
+---
+---
+<section class="manifesto">
+  <div class="wrap">
+    <div class="mani-grid">
+      <div class="fade">
+        <h2 class="display mani-title">La persona que buscabas ya está aquí.</h2>
+        <p class="mani-sub">Sin buscar, sin filtrar, sin distancias virtuales. Si alguien con Gisus está cerca de ti, aparece en tu radar. Así de simple, así de real.</p>
+        <a href="#descargar" class="btn-dark">Descargar Gisus</a>
+      </div>
+      <div class="mani-cards fade">
+        <div class="pcard mc1">
+          <image-slot id="mani-1" shape="rounded" radius="22" placeholder="Arrastra una foto"></image-slot>
+          <div class="pcard-tag">En el mismo café</div>
+        </div>
+        <div class="pcard mc2">
+          <image-slot id="mani-2" shape="rounded" radius="22" placeholder="Arrastra una foto"></image-slot>
+          <div class="pcard-tag"><span class="tag-dot"></span>Ahora mismo</div>
+        </div>
+        <div class="pcard mc3">
+          <image-slot id="mani-3" shape="rounded" radius="22" placeholder="Arrastra una foto"></image-slot>
+          <div class="pcard-tag">A unos pasos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .manifesto { padding: 120px 0; }
+  .mani-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+  .mani-title { font-size: clamp(40px, 5vw, 76px); margin-bottom: 24px; }
+  .mani-sub { font-size: 20px; color: var(--ink-soft); line-height: 1.55; max-width: 440px; margin-bottom: 38px; text-wrap: pretty; }
+  .mani-cards { position: relative; height: 460px; }
+  .mani-cards .pcard { box-shadow: 0 20px 50px rgba(30,12,20,.18); }
+  .mc1 { width: 230px; height: 300px; top: 0;    left: 4%;   transform: rotate(-6deg); background: linear-gradient(150deg, #FFE0B3, #FFB870); }
+  .mc2 { width: 240px; height: 320px; top: 70px; left: 34%;  transform: rotate(4deg); z-index: 3; background: linear-gradient(150deg, #FFD6E5, #FF9EC0); }
+  .mc3 { width: 200px; height: 264px; top: 30px; right: 2%;  transform: rotate(9deg); background: linear-gradient(150deg, #CFF5EE, #93E0CF); }
+
+  .pcard { position: absolute; z-index: 2; border-radius: 24px; overflow: visible; box-shadow: 0 24px 60px rgba(30,12,20,.30); background: linear-gradient(150deg, #FFD6E5, #FFB3CF); }
+  .pcard image-slot { display: block; width: 100%; height: 100%; }
+  .pcard::after { content: ''; position: absolute; inset: 0; border-radius: 24px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.4); pointer-events: none; }
+  .pcard-tag {
+    position: absolute; left: 14px; bottom: 14px; z-index: 5;
+    background: rgba(255,255,255,.96); color: var(--ink); font-family: var(--font-display);
+    font-weight: 700; font-size: 14px; padding: 7px 14px; border-radius: 100px;
+    display: inline-flex; align-items: center; gap: 7px; white-space: nowrap;
+    box-shadow: 0 4px 14px rgba(30,12,20,.18); backdrop-filter: blur(4px);
+  }
+  .pcard-tag b { color: var(--pink); }
+  .tag-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--pink); animation: blink 1.6s infinite; display: inline-block; }
+
+  .btn-dark {
+    background: var(--ink); color: var(--white); text-decoration: none; font-family: var(--font-display);
+    font-weight: 700; font-size: 15.5px; padding: 12px 26px; border-radius: 100px;
+    transition: transform .2s, background .2s; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-dark:hover { transform: translateY(-2px); background: #000; }
+
+  @media (max-width: 980px) {
+    .mani-grid { grid-template-columns: 1fr; gap: 40px; }
+    .mani-cards { height: 380px; }
+  }
+</style>

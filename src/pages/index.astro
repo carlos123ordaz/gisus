@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Hero from '../components/Hero.astro';
+import Manifesto from '../components/Manifesto.astro';
+import Steps from '../components/Steps.astro';
+import Differentiators from '../components/Differentiators.astro';
+import Download from '../components/Download.astro';
+import Footer from '../components/Footer.astro';
+import Tweaks from '../components/Tweaks.astro';
+---
+
+<Layout>
+  <Nav />
+  <Hero />
+  <Manifesto />
+  <Steps />
+  <Differentiators />
+  <Download />
+  <Footer />
+  <Tweaks />
+</Layout>
+
+<script>
+  const io = new IntersectionObserver(
+    (es) => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); },
+    { threshold: .14, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
