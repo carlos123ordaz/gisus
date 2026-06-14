@@ -1,0 +1,362 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import PageHero from '../components/PageHero.astro';
+---
+
+<Layout title="Seguridad — Gisus">
+  <Nav />
+
+  <PageHero
+    eyebrow="Seguridad"
+    title="Construido para protegerte"
+    subtitle="La seguridad no es una capa añadida. Es el núcleo de cómo Gisus funciona."
+  />
+
+  <!-- Pillars -->
+  <section class="pillars">
+    <div class="wrap">
+      <div class="pillars-grid">
+        <div class="pillar fade">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FF2D78" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Sin GPS</h3>
+          <p>Detectamos proximidad sin acceder a tu ubicación. Nadie sabe dónde estás exactamente, ni nosotros.</p>
+        </div>
+        <div class="pillar fade" style="transition-delay:.08s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M4 20L20 4" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/><circle cx="12" cy="12" r="9" stroke="#FF2D78" stroke-width="1.6"/></svg>
+          </div>
+          <h3>ID efímero</h3>
+          <p>Tu identificador cambia cada pocos minutos. Imposible rastrearte entre sesiones o lugares distintos.</p>
+        </div>
+        <div class="pillar fade" style="transition-delay:.16s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="#FF2D78" stroke-width="1.6"/><path d="M7 11V7a5 5 0 0110 0v4" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/></svg>
+          </div>
+          <h3>Cifrado E2E</h3>
+          <p>Los chats viajan cifrados de extremo a extremo. Ni siquiera nosotros podemos leer tus conversaciones.</p>
+        </div>
+        <div class="pillar fade" style="transition-delay:.24s">
+          <div class="pillar-icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M18.36 6.64A9 9 0 115.64 17.36" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round"/><polyline points="23 2 23 8 17 8" stroke="#FF2D78" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3>Datos mínimos</h3>
+          <p>Solo recopilamos lo estrictamente necesario. Lo que no almacenamos no puede filtrarse.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deep-dive: ID rotation -->
+  <section class="deep-sec">
+    <div class="wrap">
+      <div class="deep-grid">
+        <div class="fade">
+          <p class="sec-eyebrow">Cómo funciona</p>
+          <h2 class="display sec-title">Identificadores que caducan solos</h2>
+          <p class="deep-p">La mayoría de apps usan un identificador estable que permite seguir a un usuario de un lugar a otro. Gisus hace lo contrario: cada dispositivo genera un ID aleatorio que rota automáticamente cada 3–7 minutos.</p>
+          <p class="deep-p">Cuando te alejas de alguien, el ID que conocía ya no existe. No hay hilo que seguir. No hay patrón que construir. Eres invisible fuera de tu radio de presencia.</p>
+          <ul class="check-list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              No persiste entre sesiones
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              No se vincula a tu perfil en los servidores
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              No revela tu nombre, foto ni datos personales
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#FF2D78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Compatible con el estándar DP-3T de privacidad diferencial
+            </li>
+          </ul>
+        </div>
+        <div class="id-anim fade" style="transition-delay:.12s">
+          <div class="id-sequence">
+            <div class="id-step active">
+              <div class="id-chip">ID · 9F2A7C</div>
+              <div class="id-meta">Sesión activa · ahora</div>
+            </div>
+            <div class="id-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="var(--pink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>rota en ~5 min</span>
+            </div>
+            <div class="id-step faded">
+              <div class="id-chip">ID · D6B1E0</div>
+              <div class="id-meta">Anterior · descartado</div>
+            </div>
+            <div class="id-arrow">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 5v14M5 12l7 7 7-7" stroke="var(--pink)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>rota en ~5 min</span>
+            </div>
+            <div class="id-step faded">
+              <div class="id-chip">ID · 3A9F01</div>
+              <div class="id-meta">Anterior · descartado</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infrastructure -->
+  <section class="infra-sec">
+    <div class="wrap">
+      <div class="sec-head fade">
+        <p class="sec-eyebrow">Infraestructura</p>
+        <h2 class="display sec-title">Seguro desde los cimientos</h2>
+      </div>
+      <div class="infra-grid">
+        <div class="infra-card fade">
+          <div class="infra-num">01</div>
+          <h3>Cifrado en tránsito y en reposo</h3>
+          <p>Toda la comunicación entre la app y nuestros servidores usa TLS 1.3. Los datos almacenados se cifran con AES-256.</p>
+        </div>
+        <div class="infra-card fade" style="transition-delay:.08s">
+          <div class="infra-num">02</div>
+          <h3>Infraestructura en la UE</h3>
+          <p>Nuestros servidores están alojados en la Unión Europea bajo cumplimiento del RGPD. Ningún dato sale de la UE.</p>
+        </div>
+        <div class="infra-card fade" style="transition-delay:.16s">
+          <div class="infra-num">03</div>
+          <h3>Auditorías externas</h3>
+          <p>Realizamos revisiones de seguridad con empresas independientes dos veces al año. Los informes están disponibles para inversores bajo NDA.</p>
+        </div>
+        <div class="infra-card fade" style="transition-delay:.24s">
+          <div class="infra-num">04</div>
+          <h3>Bug bounty</h3>
+          <p>Tenemos un programa de recompensas por vulnerabilidades activo. Los investigadores de seguridad son bienvenidos.</p>
+          <a href="/contacto" class="infra-link">Ver programa →</a>
+        </div>
+        <div class="infra-card fade" style="transition-delay:.32s">
+          <div class="infra-num">05</div>
+          <h3>Respuesta a incidentes</h3>
+          <p>Contamos con un protocolo de respuesta a incidentes 24/7. En caso de brecha, notificamos a los afectados en menos de 72 horas.</p>
+        </div>
+        <div class="infra-card fade" style="transition-delay:.40s">
+          <div class="infra-num">06</div>
+          <h3>Acceso mínimo interno</h3>
+          <p>El principio de mínimo privilegio rige el acceso interno. Ningún empleado puede leer conversaciones privadas de usuarios.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- In-app safety -->
+  <section class="safety-sec">
+    <div class="wrap">
+      <div class="safety-inner fade">
+        <div class="safety-text">
+          <p class="sec-eyebrow">Dentro de la app</p>
+          <h2 class="display sec-title">Tú controlas quién te ve</h2>
+          <p class="safety-p">La visibilidad es siempre opt-in. Abres Gisus y decides si quieres aparecer en el radar de otros. Con un toque, desapareces.</p>
+          <div class="safety-features">
+            <div class="sf">
+              <div class="sf-dot"></div>
+              <div>
+                <h4>Modo invisible</h4>
+                <p>Puedes explorar sin que nadie te detecte. Ves el radar pero no apareces en el de otros.</p>
+              </div>
+            </div>
+            <div class="sf">
+              <div class="sf-dot"></div>
+              <div>
+                <h4>Bloqueo inmediato</h4>
+                <p>Bloquea a cualquier usuario con un deslizamiento. No podrán verte, escribirte ni encontrarte.</p>
+              </div>
+            </div>
+            <div class="sf">
+              <div class="sf-dot"></div>
+              <div>
+                <h4>Reportes prioritarios</h4>
+                <p>Los reportes de conducta inapropiada son revisados en menos de 24 horas por nuestro equipo de seguridad.</p>
+              </div>
+            </div>
+            <div class="sf">
+              <div class="sf-dot"></div>
+              <div>
+                <h4>Sin historial de lugares</h4>
+                <p>Gisus no guarda dónde has estado. No hay mapa de tus movimientos ni historial de ubicaciones.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="safety-phone">
+          <div class="sp-screen">
+            <div class="sp-row">
+              <span class="sp-label">Tu visibilidad</span>
+              <div class="sp-toggle on" aria-label="Visible activado">
+                <div class="sp-thumb"></div>
+              </div>
+            </div>
+            <div class="sp-divider"></div>
+            <div class="sp-row">
+              <span class="sp-label">Modo invisible</span>
+              <div class="sp-toggle" aria-label="Modo invisible desactivado">
+                <div class="sp-thumb"></div>
+              </div>
+            </div>
+            <div class="sp-divider"></div>
+            <div class="sp-row">
+              <span class="sp-label">Notificaciones</span>
+              <div class="sp-toggle on">
+                <div class="sp-thumb"></div>
+              </div>
+            </div>
+            <div class="sp-divider"></div>
+            <div class="sp-tag">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#FF2D78"/></svg>
+              Apareces en el radar de personas cercanas
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Report CTA -->
+  <section class="report-sec">
+    <div class="wrap">
+      <div class="report-box fade">
+        <div class="report-icon">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="#FF2D78" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="#FF2D78" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <div>
+          <h3>¿Encontraste una vulnerabilidad?</h3>
+          <p>Ayúdanos a mantener Gisus seguro. Revelación responsable recompensada.</p>
+        </div>
+        <a href="/contacto" class="btn-dark">Reportar →</a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
+
+<style>
+  /* Pillars */
+  .pillars { padding: 100px 0 80px; }
+  .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; }
+  .pillar { background: var(--cream); border-radius: 24px; padding: 34px 28px; }
+  .pillar-icon { width: 52px; height: 52px; background: var(--pink-softer); border-radius: 14px; display: flex; align-items: center; justify-content: center; margin-bottom: 20px; }
+  .pillar h3 { font-family: var(--font-display); font-weight: 800; font-size: 20px; margin-bottom: 10px; }
+  .pillar p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; }
+
+  /* Deep sec */
+  .deep-sec { padding: 80px 0; background: var(--ink); }
+  .deep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .sec-eyebrow { font-family: var(--font-display); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--pink); margin-bottom: 16px; }
+  .sec-title { font-size: clamp(34px, 4.4vw, 56px); color: var(--white); margin-bottom: 20px; }
+  .deep-sec .sec-title { color: var(--white); }
+  .deep-p { font-size: 17px; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 16px; }
+  .check-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-top: 28px; }
+  .check-list li { display: flex; align-items: center; gap: 10px; font-size: 16px; color: rgba(255,255,255,.8); font-weight: 500; }
+
+  .id-anim { display: flex; align-items: center; justify-content: center; }
+  .id-sequence { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .id-step { text-align: center; }
+  .id-chip {
+    font-family: 'SF Mono', ui-monospace, monospace;
+    font-size: 15px; font-weight: 600;
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.2);
+    padding: 10px 22px; border-radius: 100px;
+    letter-spacing: .06em; color: #fff;
+    display: inline-block;
+  }
+  .id-step.active .id-chip { background: var(--pink); border-color: var(--pink); box-shadow: 0 0 0 6px rgba(255,45,120,.2); }
+  .id-step.faded .id-chip { opacity: .3; }
+  .id-meta { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 6px; }
+  .id-step.active .id-meta { color: rgba(255,255,255,.7); }
+  .id-arrow { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .id-arrow span { font-size: 11px; color: rgba(255,255,255,.35); }
+
+  /* Infra */
+  .infra-sec { padding: 100px 0; }
+  .sec-head { max-width: 640px; margin-bottom: 60px; }
+  .infra-sec .sec-title { color: var(--ink); }
+  .infra-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .infra-card { background: var(--cream); border-radius: 24px; padding: 34px 28px; }
+  .infra-num { font-family: var(--font-display); font-weight: 900; font-size: 13px; color: var(--pink); letter-spacing: .1em; margin-bottom: 14px; }
+  .infra-card h3 { font-family: var(--font-display); font-weight: 800; font-size: 19px; margin-bottom: 10px; }
+  .infra-card p { font-size: 15px; color: var(--ink-soft); line-height: 1.6; }
+  .infra-link { display: inline-block; margin-top: 14px; color: var(--pink); font-weight: 700; font-size: 15px; text-decoration: none; border-bottom: 2px solid currentColor; padding-bottom: 2px; }
+
+  /* Safety */
+  .safety-sec { background: var(--cream); padding: 100px 0; }
+  .safety-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .safety-sec .sec-title { color: var(--ink); margin-bottom: 18px; }
+  .safety-p { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 28px; }
+  .safety-features { display: flex; flex-direction: column; gap: 22px; }
+  .sf { display: flex; gap: 16px; align-items: flex-start; }
+  .sf-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--grad); flex-shrink: 0; margin-top: 6px; }
+  .sf h4 { font-family: var(--font-display); font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+  .sf p { font-size: 15px; color: var(--ink-soft); line-height: 1.55; margin: 0; }
+
+  .safety-phone { display: flex; justify-content: center; }
+  .sp-screen {
+    background: var(--white); border-radius: 28px; padding: 28px;
+    box-shadow: 0 20px 60px rgba(30,12,20,.12); width: 100%; max-width: 320px;
+  }
+  .sp-row { display: flex; align-items: center; justify-content: space-between; padding: 4px 0; }
+  .sp-label { font-size: 16px; font-weight: 600; color: var(--ink); }
+  .sp-toggle {
+    width: 50px; height: 28px; border-radius: 100px; background: var(--line);
+    position: relative; cursor: pointer; transition: background .2s;
+  }
+  .sp-toggle.on { background: var(--pink); }
+  .sp-thumb {
+    position: absolute; top: 3px; left: 3px; width: 22px; height: 22px;
+    border-radius: 50%; background: white; box-shadow: 0 1px 4px rgba(0,0,0,.18);
+    transition: left .2s;
+  }
+  .sp-toggle.on .sp-thumb { left: 25px; }
+  .sp-divider { height: 1px; background: var(--line); margin: 14px 0; }
+  .sp-tag {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--pink-softer); color: var(--pink);
+    font-size: 13px; font-weight: 600; padding: 10px 14px; border-radius: 12px;
+    margin-top: 8px;
+  }
+
+  /* Report */
+  .report-sec { padding: 0 0 100px; }
+  .report-box {
+    background: var(--grad); border-radius: 28px; padding: 44px 52px;
+    display: flex; align-items: center; gap: 28px; color: #fff;
+  }
+  .report-icon { flex-shrink: 0; width: 64px; height: 64px; background: rgba(255,255,255,.15); border-radius: 18px; display: flex; align-items: center; justify-content: center; }
+  .report-icon svg path { stroke: #fff; }
+  .report-box h3 { font-family: var(--font-display); font-weight: 800; font-size: 22px; margin-bottom: 6px; }
+  .report-box p { font-size: 16px; opacity: .85; margin: 0; }
+  .report-box .btn-dark { margin-left: auto; flex-shrink: 0; white-space: nowrap; background: var(--ink); color: #fff; text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 15.5px; padding: 12px 26px; border-radius: 100px; transition: transform .2s, background .2s; display: inline-flex; align-items: center; gap: 8px; }
+  .report-box .btn-dark:hover { transform: translateY(-2px); background: #000; }
+
+  @media (max-width: 980px) {
+    .pillars-grid { grid-template-columns: 1fr 1fr; }
+    .deep-grid { grid-template-columns: 1fr; gap: 48px; }
+    .infra-grid { grid-template-columns: 1fr 1fr; }
+    .safety-inner { grid-template-columns: 1fr; gap: 48px; }
+    .report-box { flex-direction: column; text-align: center; padding: 36px 28px; }
+    .report-box .btn-dark { margin-left: 0; }
+  }
+  @media (max-width: 560px) {
+    .pillars-grid { grid-template-columns: 1fr; }
+    .infra-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  const io = new IntersectionObserver(
+    (es) => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); }); },
+    { threshold: .12, rootMargin: '0px 0px -40px 0px' }
+  );
+  document.querySelectorAll('.fade').forEach(el => io.observe(el));
+</script>
