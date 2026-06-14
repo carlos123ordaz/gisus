@@ -7,15 +7,15 @@
       <h1 class="hero-word">Gisus</h1>
 
       <div class="pcard pc1">
-        <image-slot id="hero-1" shape="rounded" radius="24" placeholder="Arrastra una foto"></image-slot>
+        <img src="/animation-card-1.webp" alt="Ana" class="pcard-img" />
         <div class="pcard-tag"><span class="tag-dot"></span>Ana · <b>a 8m</b></div>
       </div>
       <div class="pcard pc2">
-        <image-slot id="hero-2" shape="rounded" radius="24" placeholder="Arrastra una foto"></image-slot>
+        <img src="/animation-card-2.webp" alt="Lucas" class="pcard-img" />
         <div class="pcard-tag"><span class="tag-dot"></span>Lucas · <b>a 14m</b></div>
       </div>
       <div class="pcard pc3">
-        <image-slot id="hero-3" shape="rounded" radius="24" placeholder="Arrastra una foto"></image-slot>
+        <img src="/animation-card-3.webp" alt="Sara" class="pcard-img" />
         <div class="pcard-tag"><span class="tag-dot"></span>Sara · <b>a 22m</b></div>
       </div>
     </div>
@@ -27,8 +27,8 @@
   .hero-stage { position: relative; height: calc(100vh - 120px); min-height: 620px; display: flex; align-items: center; justify-content: center; }
   .hero-word { font-family: var(--font-display); font-weight: 900; font-size: clamp(120px, 23vw, 360px); color: var(--ink); letter-spacing: -0.04em; line-height: 1; user-select: none; position: relative; z-index: 1; }
 
-  .pcard { position: absolute; z-index: 2; border-radius: 24px; overflow: visible; box-shadow: 0 24px 60px rgba(30,12,20,.30); transition: transform .4s ease; background: linear-gradient(150deg, #FFD6E5, #FFB3CF); }
-  .pcard image-slot { display: block; width: 100%; height: 100%; }
+  .pcard { position: absolute; z-index: 2; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(30,12,20,.30); transition: transform .4s ease; background: linear-gradient(150deg, #FFD6E5, #FFB3CF); }
+  .pcard-img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
   .pcard::after { content: ''; position: absolute; inset: 0; border-radius: 24px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.4); pointer-events: none; }
   .pcard-tag {
     position: absolute; left: 14px; bottom: 14px; z-index: 5;
